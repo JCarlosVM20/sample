@@ -1,16 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('QE') {
+    stage('Unit Test') {
       steps {
-        sh 'echo "checking path"'
-        sh 'pwd'
+        sh 'echo "start Minitest"'
+        sh 'cd cidr_convert_api'
+        sh 'ruby tests.rb' || true
             }
       }
-      stage('Unit Test') {
+      stage('QE') {
         steps {
-        sh 'echo "In progress"'
-        sh 'ruby ruby/tests.rb'
+        sh 'echo "start Rubocop"'
+        sh 'cd cidr_convert_api'
+        sh 'rubocop || true'
               }
         }
     }
