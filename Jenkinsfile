@@ -14,7 +14,9 @@ pipeline {
         steps {
         sh 'echo "start Rubocop"'
         sh 'rubocop > static.txt || true'
-              }
+        sh 'pwd'
+        sh 'ls'
+                  }
         }
     }
 }
