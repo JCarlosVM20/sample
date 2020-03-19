@@ -13,7 +13,7 @@ pipeline {
         steps {
         sh 'echo "start Rubocop"'
         sh label: '', script: '''cd cidr_convert_api 
-                                 rubocop > statica.txt || true 
+                                 rubocop >> statica.txt || true 
                                  mv statica.txt /var/lib/jenkins/workspace/Demo2'''
                   }
         }
