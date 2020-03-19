@@ -4,8 +4,9 @@ pipeline {
     stage('Unit Test') {
       steps {
         sh 'echo "start Minitest"'
-        sh label: '', script: '''ruby tests.rb || true 
-                                   rm statica.txt'''
+        sh label: '', script: '''cd cidr_convert_api
+                                   ruby tests.rb > utest.txt || true 
+                                   mv utest.txt /var/lib/jenkins/workspace/Demo2'''
             }
       }
       stage('QE') {
