@@ -5,16 +5,16 @@ pipeline {
       steps {
         sh 'echo "start Minitest"'
         sh label: '', script: '''cd cidr_convert_api 
-                                   ruby tests.rb > utest.txt || true 
-                                   mv utest.txt /var/lib/jenkins/workspace/Demo2'''
+                                   ruby tests.rb || true 
+                                   rm statica.txt'''
             }
       }
       stage('QE') {
         steps {
         sh 'echo "start Rubocop"'
         sh label: '', script: '''cd cidr_convert_api 
-                                 rubocop > statica.txt || true 
-                                 mv statica.txt /var/lib/jenkins/workspace/Demo2'''
+                                 rubocop > static.txt || true 
+                                 mv static.txt /var/lib/jenkins/workspace/Demo2'''
                   }
         }
     }
