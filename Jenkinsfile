@@ -13,10 +13,11 @@ pipeline {
       }
       stage('QE') {
         steps {
-        sh 'echo "start Rubocop"'
-        sh 'rubocop > static.txt || true'
+        //sh 'echo "start Rubocop"'
+        //sh 'rubocop > static.txt || true'
         sh 'pwd'
         sh 'ls'
+        //sh 'rubocop > static.txt || true'
                   }
         }
     }
