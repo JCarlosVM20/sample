@@ -11,7 +11,7 @@ pipeline {
       }
       stage('QE') {
         steps {
-        sh 'echo "start Rubocop"
+        sh 'echo "start Rubocop"'
         sh 'rubocop || true'
               }
         }
