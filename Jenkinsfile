@@ -5,12 +5,13 @@ pipeline {
       steps {
         sh 'echo "start Minitest"'
         sh 'cd cidr_convert_api'
-        sh 'ruby tests.rb || true'
+        sh 'pwd'
+        //sh 'ruby tests.rb || true'
             }
       }
       stage('QE') {
         steps {
-        sh 'echo "start Rubocop"'
+        sh 'echo "start Rubocop"
         sh 'rubocop || true'
               }
         }
