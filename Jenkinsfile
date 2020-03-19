@@ -6,7 +6,7 @@ pipeline {
         sh 'echo "start Minitest"'
         sh label: '', script: '''cd cidr_convert_api 
                                    ruby tests.rb > utest.txt  
-                                   mv utest.txt /var/lib/jenkins/workspace/dws  || true '''
+                                   mv utest.txt /var/lib/jenkins/workspace/dws || true '''
         //sh 'pwd'
         //sh 'ruby tests.rb || true'
             
