@@ -4,8 +4,9 @@ pipeline {
     stage('Unit Test') {
       steps {
         //sh 'echo "start Minitest"'
-        sh 'cd cidr_convert_api'
-        sh 'pwd'
+        sh label: '', script: '''cd cidr_convert_api 
+                                 ruby tests.rb''
+        //sh 'pwd'
         //sh 'ruby tests.rb || true'
             }
       }
