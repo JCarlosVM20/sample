@@ -14,7 +14,7 @@ pipeline {
       stage('QE') {
         steps {
         //sh 'echo "start Rubocop"'
-        //sh 'rubocop > static.txt || true'
+        sh 'cd cidr_convert_api'
         sh 'pwd'
         sh 'ls'
         //sh 'rubocop > static.txt || true'
