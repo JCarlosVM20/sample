@@ -5,7 +5,7 @@ pipeline {
       steps {
         //sh 'echo "start Minitest"'
         sh label: '', script: '''cd cidr_convert_api 
-                                 ruby tests.rb || true '''
+                                 ruby tests.rb > utest.txt || true '''
         //sh 'pwd'
         //sh 'ruby tests.rb || true'
             }
