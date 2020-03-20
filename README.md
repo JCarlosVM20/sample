@@ -1,2 +1,2 @@
 # sample
-Repo for final project
+Repository for final project
